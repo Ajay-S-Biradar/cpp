@@ -62,6 +62,19 @@ void deletenode(node* &head){
 	return ;
 }
 
+void printReverse(node* head)
+{
+    // Base case
+    if (head == NULL)
+    return;
+ 
+    // print the list after head node
+    printReverse(head->next);
+ 
+    // After everything else is printed, print head
+    cout << head->data << " ";
+}
+
 int main(){
 	node *start = NULL;
 	//cout<<temp->data;
@@ -72,5 +85,6 @@ int main(){
 	deletenode(start);
 	
 	display(start);
+	printReverse(start);
 return 0;
 }
